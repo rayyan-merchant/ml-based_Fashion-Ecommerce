@@ -1,81 +1,134 @@
-# Fashion E-Commerce Intelligence System
+# **Fashion E-Commerce ML System**
 
-An integrated ML-DB project for a fashion storefront and admin intelligence dashboard. The app combines customer shopping flows, admin commerce operations, and ML-backed insights for recommendations, sentiment analysis, forecasting, segmentation, and funnel analytics.
+### *Hybrid Recommender • NLP • Forecasting • Segmentation • Funnel Analytics*
 
-## Current Stack
+This project implements a full end-to-end Machine Learning pipeline for a fashion e-commerce platform. It converts raw transactional, product, review, and behavioral data into meaningful insights, personalized recommendations, demand forecasts, and customer intelligence.
 
-- Frontend: React 18, CRA, JavaScript, React Router, Tailwind CSS, Axios, Recharts/Chart.js
-- Backend: FastAPI, PostgreSQL, JWT authentication
-- ML: hybrid recommender, review similarity, sentiment, forecasting, segmentation, analytics endpoints
-- Database: PostgreSQL schema under `niche_data`
+---
 
-The frontend prompt describes the target Vite + TypeScript + Zustand + TanStack Query architecture. This repo currently preserves the working CRA frontend while adding compatible service contracts under `frontend/src/services/` so a future Vite/TypeScript migration can happen incrementally.
+## **Repository Structure**
 
-## Quick Start
+This repository contains the complete and final implementation of the project.
 
-1. Copy env files:
+The intermediate development repository, containing earlier development stages, experimentation, and incremental project progress, can be found here:
 
-   ```powershell
-   Copy-Item .env.example .env
-   Copy-Item frontend\.env.example frontend\.env
-   ```
+🔗 **Intermediate Development Repository:**
+https://github.com/Srijaali/ml-based_Fashion-Ecommerce
 
-2. Start the backend:
+---
 
-   ```powershell
-   cd backend
-   uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-   ```
+## **Features**
 
-3. Start the frontend:
+### **1. Hybrid Recommendation System**
 
-   ```powershell
-   cd frontend
-   npm.cmd start
-   ```
+* Collaborative Filtering (Implicit ALS / MF)
+* Content-Based Similarity (TF-IDF + BERT embeddings)
+* Final Hybrid Model: CF + Content + Popularity + Behavior Re-ranking
 
-4. Open `http://127.0.0.1:3000`.
+### **2. NLP Review Intelligence**
 
-## Mock vs Real API
+* BERT-based sentiment classification
+* Sentence-Transformer embeddings
+* Topic signals + toxicity detection
+* Category-level sentiment trends
 
-By default the frontend calls the real FastAPI backend:
+### **3. Time-Series Forecasting**
 
-```env
-REACT_APP_API_URL=http://localhost:8000
-REACT_APP_USE_MOCK_API=false
+* Prophet / ARIMA for article & category demand
+* Seasonality patterns, trend detection
+* Inventory risk alerts
+
+### **4. Customer Segmentation**
+
+* Clustering (K-Means / GMM / HDBSCAN)
+* RFM scores, behavior ratios, category preferences
+* Segment-based personalization
+
+### **5. Funnel Analytics & Behavioral Insights**
+
+* View → Click → Cart → Purchase paths
+* Drop-off analysis
+* Conversion KPIs + session trajectories
+
+### **6. Trend & BI Insights**
+
+* Trending vs declining products
+* Price elasticity
+* Customer lifecycle metrics
+* Sales & category evolution
+
+---
+
+## **Project Pipeline**
+
+```
+1. Raw Data
+2. Filtering & Cleaning
+3. ETL → ML Datasets (A–F)
+4. Preprocessing & Feature Engineering
+5. EDA
+6. Model Training (CF, CB, Hybrid, NLP, TS, Segmentation)
+7. Hyperparameter Tuning
+8. Final Models & Evaluations
+9. Trend/BI Dashboards
+10. API Serving & Integration
 ```
 
-Set `REACT_APP_USE_MOCK_API=true` to use realistic fixtures from `frontend/src/api/mockData.js`. The mock layer includes 60 products, 24 customers, 36 orders, paginated reviews, segments, forecasts, analytics, wordcloud placeholders, and recommendation-ready product fields.
+---
 
-The service layer also reads `VITE_API_BASE_URL` and `VITE_USE_MOCK_API` so the same contracts survive a future Vite migration.
+## **ML Datasets**
 
-## Important Frontend Paths
+* **Dataset A:** User–Item interactions (CF)
+* **Dataset B:** Article content features
+* **Dataset C:** Customer features (RFM + behavior)
+* **Dataset D:** Time-series sales
+* **Dataset E:** Reviews (sentiment + embeddings)
+* **Dataset F:** Behavioral events + funnels
 
-- Storefront: `/`, `/products`, `/collections/:category`, `/sale`, `/new-arrivals`, `/trending`, `/lookbook`, `/brands`
-- Product detail: `/products/:id`
-- Customer flows: `/login`, `/register`, `/cart`, `/wishlist`, `/checkout`, `/orders`, `/profile`, `/account/*`
-- Admin: `/admin/login`, `/admin`, `/admin/products`, `/admin/orders`, `/admin/customers`, `/admin/reviews`, `/admin/intelligence/*`, `/admin/settings`
+These datasets drive all downstream ML models.
 
-## Project Structure
+---
 
-- `frontend/src/api/`: backend-specific Axios clients and mock fixtures
-- `frontend/src/services/`: prompt-aligned service contracts for products, orders, customers, reviews, recommendations, ML, auth, cart, and admin
-- `frontend/src/pages/`: customer and admin pages
-- `frontend/src/components/`: reusable UI, product, chart, ML, and admin widgets
-- `backend/app/routers/`: FastAPI route modules for commerce, auth, ML, and analytics
-- `database/`: SQL schema, procedures, and DB setup assets
-- `ml/`: model training and artifact workspace
+## **Tech Stack**
 
-## Verification
+**Languages & Frameworks:**
+Python, Pandas, scikit-learn, PyTorch, Sentence-BERT, Implicit, Prophet/ARIMA
 
-Useful checks:
+**Storage & Processing:**
+PostgreSQL, Parquet, NumPy
 
-```powershell
-cd backend
-python -m compileall app
+**Experimentation:**
+MLflow
 
-cd ..\frontend
-npm.cmd run build
-```
+**Optional Serving:**
+FastAPI, Docker
 
-The latest integration pass verified real backend auth, cart, wishlist, checkout, admin CRUD, review paging/similarity, recommendations, sentiment, forecasting, segmentation, and analytics endpoints.
+---
+
+## **Results Delivered**
+
+* High-quality hybrid recommender
+* Robust sentiment-aware product intelligence
+* Accurate demand forecasts
+* Actionable customer segments
+* Complete behavioral funnel metrics
+* Comprehensive BI and trend insights
+
+---
+
+###Project Contributors  
+
+<div align="center">
+  <a href="https://www.linkedin.com/in/rayyanmerchant2004/" target="_blank">
+    <img src="https://img.shields.io/badge/Rayyan%20Merchant-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="Rayyan Merchant"/>
+  </a>
+  <a href="https://www.linkedin.com/in/rija-ali-731095296" target="_blank">
+    <img src="https://img.shields.io/badge/Syeda%20Rija%20Ali-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="Syeda Rija Ali"/>
+  </a>
+  <a href="https://www.linkedin.com/in/riya-bhart-339036287/" target="_blank">
+    <img src="https://img.shields.io/badge/Riya%20Bhart-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="Riya Bhart"/>
+  </a>
+    <a href="https://www.linkedin.com/in/syed-ukkashah-28b334214/" target="_blank">
+    <img src="https://img.shields.io/badge/Syed%20Ukkashah%20Ahmed-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="Syed Ukkashah Ahmed"/>
+  </a>
+</div>
