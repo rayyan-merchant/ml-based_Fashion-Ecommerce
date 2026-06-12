@@ -1,0 +1,9 @@
+export { default as adminService } from './admin';
+export { default as authService } from './auth';
+export { default as cartService } from './cart';
+export { default as customersService } from './customers';
+export { default as mlService } from './ml';
+export { default as ordersService } from './orders';
+export { default as productsService } from './products';
+export { default as recommendationsService } from './recommendations';
+export { default as reviewsService } from './reviews';
