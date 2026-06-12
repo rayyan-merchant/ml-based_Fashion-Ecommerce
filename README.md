@@ -116,7 +116,7 @@ FastAPI, Docker
 
 ---
 
-##Project Contributors  
+### Project Contributors  
 
 <div align="center">
   <a href="https://www.linkedin.com/in/rayyanmerchant2004/" target="_blank">
